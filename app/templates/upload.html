@@ -1,0 +1,101 @@
+<!-- templates/upload.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload CSV File</title>
+    <style>
+        /* Importing Poppins font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fb;
+            margin: 0;
+            padding: 0;
+            color: #0a003f;
+        }
+
+        /* Centered container styling */
+        .upload-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* File input styling */
+        .file-input {
+            margin: 20px 0;
+        }
+
+        .file-input input[type="file"] {
+            padding: 10px;
+            font-size: 1rem;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #333;
+            width: 100%;
+        }
+
+        .file-input input[type="file"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        /* Submit button styling */
+        .submit-button {
+            padding: 12px 30px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .upload-container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .submit-button {
+                padding: 10px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h1>Upload CSV File for Anomaly Detection</h1>
+        <form class="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+            <div class="file-input">
+                <input type="file" name="csv_file" accept=".csv" required>
+            </div>
+            <button type="submit" class="submit-button">Upload and Analyze</button>
+        </form>
+    </div>
+</body>
+</html>
